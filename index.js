@@ -90,8 +90,13 @@ console.log(newArray[4]());
 console.log("---------");
 
 //8) Write function `sum`. Function expects arbitrary number of digit arguments and returns compound value of them.
+// using recursion
+// const sum = (...rest) => {
+//     return (rest.length === 0) ? 0 : rest[0] + sum(...rest.slice(1));
+// }
+// using .reduce()
 const sum = (...rest) => {
-    return (rest.length === 0) ? 0 : rest[0] + sum(...rest.slice(1));
+    return rest.reduce((addendFirst, addendSecond) => addendFirst + addendSecond);
 }
 console.log(sum(1, 3, 5, 7));
 
